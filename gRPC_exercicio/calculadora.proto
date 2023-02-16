@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package calculadoraPackage;
+
+service ObjetoCalculadora {
+    rpc calculadora(GiveMeTheNumbers) returns (GiveMeTheNumbers);
+}
+
+message GiveMeTheNumbers {
+    int32 op = 1;
+    int32 var1 = 2;
+    int32 var2 = 3;
+}
