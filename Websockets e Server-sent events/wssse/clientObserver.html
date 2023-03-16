@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Observador do Chat WebSocket</title>
+</head>
+<body>
+    <h1>Observador do Chat WebSocket</h1>
+
+    <div id="result"></div>
+
+    <script language="javascript">
+    
+    const source = new EventSource("http://localhost:8080");
+    source.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        const nick = data.nick;
+        const message = data.message;
+        document.getElementById("result").innerHTML = nick +
+        message + "</h3>";
+        
+    }
+    </script>
+</body>
+</html>
